@@ -31,13 +31,14 @@ aside button{
     width:250px; 
 }
 #container{
-    width:80%;
+    width:100%;
     height: auto;
     display:grid;
     grid-template-columns: repeat(4,1fr);
      grid-template-rows: repeat(2,1fr);
      background-color: aqua;
      z-index: 1;
+     gap:10px;
 }
 .card{
     background-color: white;

@@ -25,7 +25,7 @@
     </aside>
 <div class="main">
     <nav>
-   <select id="options">
+   <select id="category" onchange="category()">
             <option value="Auto"> Auto</option>
             <option value="Car">Car</option>
             <option value="Truck">Truck</option>
@@ -36,7 +36,7 @@
             <option value="Available"> Available</option>
             <option value="Unavailable">Unavailable</option>
         </select>
-        <button>
+        <button onclick="clearr()">
             Clear Filter
         </button>
     </nav>
@@ -69,6 +69,7 @@
 
     function  renderFleet(Fleets){
         const container = document.querySelector("#container");
+       container.innerHTML=" "
         Fleets.forEach((fleet)=>{
           const card=document.createElement("div");
           card.className="card"
@@ -118,7 +119,23 @@
          console.log(card);
          container.appendChild(card);
         })
+        
          
+    }
+
+function clearr(){
+    renderFleet(Fleets);
+    console.log("Hello");
+}
+    function category(){
+
+            const category=document.getElementById("category").value;
+            const filteredArr = Fleets.filter((fleet)=>{
+              if(fleet.category===category){
+                return fleet;
+              }
+            })
+            renderFleet(filteredArr)
     }
 </script>
 </html>
