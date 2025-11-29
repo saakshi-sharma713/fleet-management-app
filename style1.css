@@ -5,7 +5,7 @@ aside{
     justify-content:flex-start;
     position: relative;
     left:0;
-    height:100vh;
+    height:600px;
     background-color: antiquewhite;
     width:300px;
     gap:15px;
@@ -26,8 +26,12 @@ aside button{
     height:30px;
     width:250px; 
 }
-.container{
+#container{
+    width:80%;
+    height: auto;
     display:grid;
     grid-template-columns: repeat(4,1fr);
      grid-template-rows: repeat(2,1fr);
+     background-color: aqua;
+     z-index: 1;
 }

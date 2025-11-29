@@ -23,7 +23,7 @@
         </select>
         <button onclick="createFleet()">Add Fleet</button>
     </aside>
-    <div class="container">
+    <div id="container">
 
     </div>
 </body>
@@ -48,7 +48,34 @@
     }
 
     function  renderFleet(Fleets){
-         const card=document.createElement("div");
+        const container = document.querySelector("#container");
+        Fleets.forEach((fleet)=>{
+          const card=document.createElement("div");
+         const  regno = document.createElement("h3");
+         regno.textContent=`Regno: ${fleet. regno}`;
+           
+         const  category = document.createElement("h3");
+         category.textContent=`  category : ${fleet.category}`;
+          
+          const   Driver = document.createElement("h3");
+        Driver.textContent=`  Driver : ${fleet.Driver}`;
+           
+           const    Available = document.createElement("h3");
+         Available.textContent=`    Available : ${fleet.Available}`;
+
+           const   image = document.createElement("img");
+         image.src=fleet.image;
+          image.width="300"
+         const update = document.createElement("button");
+         update.textContent="Update Driver"
+           const status = document.createElement("button");
+             status.textContent="Change Availablity"
+             const deletee = document.createElement("button");
+         deletee.textContent="Delete Vehicle";
+         card.append(image, regno ,  category,   Driver, Available,update,status,deletee);
+         console.log(card);
+         container.appendChild(card);
+        })
          
     }
 </script>
