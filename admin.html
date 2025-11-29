@@ -32,11 +32,11 @@
             <option value=" Bus"> Bus</option> 
         </select>
 
-      <select id="Available">
+      <select id="status" onchange="filterr()">
             <option value="Available"> Available</option>
             <option value="Unavailable">Unavailable</option>
         </select>
-        <button onclick="clearr()">
+        <button onclick="clearr()" id="filter">
             Clear Filter
         </button>
     </nav>
@@ -83,7 +83,7 @@
         Driver.textContent=`  Driver : ${fleet.Driver}`;
            
            const    Available = document.createElement("h3");
-         Available.textContent=`    Available : ${fleet.Available}`;
+         Available.textContent=`Available : ${fleet.Available}`;
 
            const   image = document.createElement("img");
          image.src=fleet.image;
@@ -122,7 +122,15 @@
         
          
     }
-
+function filterr(){
+    const Available=document.getElementById("status").value;
+            const filteredArr = Fleets.filter((fleet)=>{
+              if(fleet.Available===Available){
+                return fleet;
+              }
+            })
+            renderFleet(filteredArr);
+}
 function clearr(){
     renderFleet(Fleets);
     console.log("Hello");
@@ -135,7 +143,7 @@ function clearr(){
                 return fleet;
               }
             })
-            renderFleet(filteredArr)
+            renderFleet(filteredArr);
     }
 </script>
 </html>
