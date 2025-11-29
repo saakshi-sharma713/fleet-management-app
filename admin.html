@@ -99,13 +99,15 @@
            const status = document.createElement("button");
              status.textContent="Change Availablity"
           status.addEventListener("click",()=>{
+            console.log(fleet.Available );
              if(  fleet.Available  === "Available"){
                 fleet.Available = "Unavailable";
-                Available.textContent == `Available : Unavailable`
+                Available.textContent = `Available : ${fleet.Available}`
+                 console.log(fleet.Available );
              }
              else{
                  fleet.Available = "Available";
-                Available.textContent == `Available : Available`
+                Available.textContent = `Available : ${fleet.Available}`
              }
              console.log("Hello");
          })
