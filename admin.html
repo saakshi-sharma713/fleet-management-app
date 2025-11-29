@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+        <link rel="stylesheet" href="style1.css"/>
 </head>
 <body>
-    <h1>Admin </h1>
+  
+    <aside>
+        <input type="text" id="Reg_No" placeholder="Reg No of Vehicle "/>
+        <select id="options">
+            <option value="Auto"> Auto</option>
+            <option value="Car">Car</option>
+            <option value="Truck">Truck</option>
+            <option value=" Bus"> Bus</option> 
+        </select>
+          <input type="text" id="Driver" placeholder="Enter Driver Name"/>
+          <select id="Available">
+            <option value="Available"> Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+        <button onclick="createFleet()">Add Fleet</button>
+    </aside>
+    <div class="container">
+
+    </div>
 </body>
+<script>
+    const image="https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png";
+    let Fleets =[];
+    function createFleet(){
+        const regno=document.getElementById("Reg_No").value;
+        const category=document.getElementById("options").value;
+         const Driver=document.getElementById("Driver").value;
+          const Available=document.getElementById("Available").value;
+
+       let fleet ={
+           regno,
+             category ,
+              Driver,
+               Available,
+               image
+       }
+    Fleets.push(fleet);
+    renderFleet(Fleets);
+    }
+
+    function  renderFleet(Fleets){
+         const card=document.createElement("div");
+         
+    }
+</script>
 </html>
