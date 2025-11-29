@@ -1,3 +1,7 @@
+body{
+    display: flex;
+    
+}
 aside{
     display: flex;
     flex-direction: column;
@@ -35,3 +39,23 @@ aside button{
      background-color: aqua;
      z-index: 1;
 }
+.card{
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    
+}
+.card h3{
+    margin:0;
+}
+.card button{
+  height:30px;
+    width:100%; 
+}
+.main{
+    display: flex;
+    flex-direction: column;
+}
+ 
